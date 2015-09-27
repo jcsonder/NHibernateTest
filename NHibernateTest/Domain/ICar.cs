@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NHibernateTest
+﻿namespace NHibernateTest
 {
     public interface ICar
     {
-        string Color { get; set; }
-        int Id { get; set; }
-        string Model { get; set; }
-        string Name { get; set; }
-        string Drive();
+        long Id { get; }
+        string Name { get; }
+        string Model { get; }
+        string Color { get; }
+
+        //string Drive();
     }
 }

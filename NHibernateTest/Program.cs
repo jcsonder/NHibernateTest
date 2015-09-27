@@ -1,12 +1,5 @@
-﻿using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
-using NHibernate;
+﻿using NHibernate;
 using NHibernateTest.Persistence.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NHibernateTest
 {
@@ -14,8 +7,7 @@ namespace NHibernateTest
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
-            car.Name = "Porsche";
+            Car car = new Car("Porsche", "356", "silver");
 
             SaveCar(car);
         }

@@ -1,12 +1,7 @@
 ﻿using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using NHibernate.Cfg;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NHibernate.Tool.hbm2ddl;
 
 namespace NHibernateTest.Persistence.Helper
 {
@@ -19,6 +14,7 @@ namespace NHibernateTest.Persistence.Helper
                 SQLiteConfiguration.Standard
                   .UsingFile(fileName)
               )
+              .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(true, true, false))
               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Car>())
               .BuildSessionFactory();
         }

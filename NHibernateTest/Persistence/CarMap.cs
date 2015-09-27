@@ -1,9 +1,4 @@
 ﻿using FluentNHibernate.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NHibernateTest.Persistence
 {
@@ -13,10 +8,9 @@ namespace NHibernateTest.Persistence
         {
             Table("Car");
             Id(x => x.Id).UniqueKey("Id");
-            Map(x => x.Name);
-
-            //Map(x => x.Color);
-            //Map(x => x.Model);
+            Map(x => x.Name).Nullable();
+            Map(x => x.Model).Nullable();
+            Map(x => x.Color).Nullable();
             //DiscriminateSubClassesOnColumn("Type");
         }
     }
