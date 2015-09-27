@@ -9,7 +9,7 @@ namespace NHibernateTest.Persistence.Helper
 {
     public class NHibernateHelper
     {
-        const string DbFileName = "NHibernate.db";
+        const string DbFileName = "NHibernate.sqlite";
 
         public static ISessionFactory CreateSessionFactory()
         {
