@@ -2,7 +2,7 @@
 
 namespace NHibernateTest
 {
-    public class Car : Entity, ICar
+    public abstract class Car : Entity, ICar
     {
         private string _name;
         private string _model;

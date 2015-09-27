@@ -7,15 +7,17 @@ namespace NHibernateTest
     {
         static void Main(string[] args)
         {
-            Car car = new Car("Porsche", "356", "silver");
-
+            Car car = new SportCar("Porsche", "356", "silver");
             SaveCar(car);
+
+            Car truck = new Truck("Ford", "F-350", "blue");
+            SaveCar(truck);
         }
         
         public static void SaveCar(Car car)
         {
             ISessionFactory sessionFactory = 
-                NHibernateHelper.CreateSessionFactory("firstProject.db");
+                NHibernateHelper.CreateSessionFactory();
 
             using (ISession session = sessionFactory.OpenSession())
             using (var transaction = session.BeginTransaction())

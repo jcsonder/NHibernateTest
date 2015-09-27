@@ -78,6 +78,8 @@
     <Compile Include="Domain\ICar.cs" />
     <Compile Include="Persistence\CarMap.cs" />
     <Compile Include="Persistence\Helper\NHibernateHelper.cs" />
+    <Compile Include="Persistence\SportCarMap.cs" />
+    <Compile Include="Persistence\TruckMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DomainModel\SportCar.cs" />

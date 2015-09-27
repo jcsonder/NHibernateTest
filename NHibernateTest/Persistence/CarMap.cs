@@ -8,10 +8,12 @@ namespace NHibernateTest.Persistence
         {
             Table("Car");
             Id(x => x.Id).UniqueKey("Id");
-            Map(x => x.Name).Nullable();
-            Map(x => x.Model).Nullable();
-            Map(x => x.Color).Nullable();
-            //DiscriminateSubClassesOnColumn("Type");
+
+            DiscriminateSubClassesOnColumn("CarType", (byte)0);
+
+            Map(x => x.Name).Length(100).Nullable();
+            Map(x => x.Model).Length(100).Nullable();
+            Map(x => x.Color).Length(20).Nullable();
         }
     }
 }

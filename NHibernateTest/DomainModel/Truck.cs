@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NHibernateTest
+﻿namespace NHibernateTest
 {
-    //class Truck : Car, ICar
-    //{
-    //    //public override string Drive()
-    //    //{
-    //    //    return ("grrrrrrrrrrrr i'm a sports truck- " + Name);
-    //    //}
-    //}
+    public class Truck : Car
+    {
+        public Truck()
+        { }
+
+        public Truck(string name, string model, string color)
+            : base(name, model, color)
+        { }
+
+        //public override string Drive()
+        //{
+        //    return ("grrrrrrrrrrrr i'm a sports truck- " + Name);
+        //}
+    }
 }
