@@ -1,5 +1,6 @@
 ﻿using NHibernate;
 using NHibernateTest.Persistence.Helper;
+using System;
 
 namespace NHibernateTest
 {
@@ -8,10 +9,14 @@ namespace NHibernateTest
         static void Main(string[] args)
         {
             Car car = new SportCar("Porsche", "356", "silver");
+            Console.WriteLine(car.Drive());
             SaveCar(car);
 
             Car truck = new Truck("Ford", "F-350", "blue");
+            Console.WriteLine(truck.Drive());
             SaveCar(truck);
+
+            Console.ReadLine();
         }
         
         public static void SaveCar(Car car)

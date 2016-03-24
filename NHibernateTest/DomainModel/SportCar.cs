@@ -9,9 +9,9 @@
             : base(name, model, color)
         { }
 
-        //public override string Drive()
-        //{
-        //    return ("vroooomvroooomvroooomvroooom i'm a sports car - " + Name);
-        //}
+        public override string Drive()
+        {
+            return ("vroooomvroooomvroooomvroooom i'm a sports car - " + Name);
+        }
     }
 }

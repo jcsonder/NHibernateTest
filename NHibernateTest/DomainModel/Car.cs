@@ -26,6 +26,6 @@ namespace NHibernateTest
         public virtual string Model { get { return _model; } }
         public virtual string Color { get { return _color; } }
 
-        //public abstract string Drive();
+        public abstract string Drive();
     }
 }
