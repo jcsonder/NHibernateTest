@@ -1,6 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
+using NHibernateTest.Backend.DomainModel;
 
-namespace NHibernateTest.Persistence
+namespace NHibernateTest.Backend.Persistence
 {
     public class CarMap : ClassMap<Car>
     {

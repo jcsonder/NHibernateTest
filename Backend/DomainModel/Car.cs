@@ -1,6 +1,7 @@
 ﻿using FluentNHibernate.Data;
+using NHibernateTest.Backend.Domain;
 
-namespace NHibernateTest
+namespace NHibernateTest.Backend.DomainModel
 {
     public abstract class Car : Entity, ICar
     {
@@ -27,5 +28,10 @@ namespace NHibernateTest
         public virtual string Color { get { return _color; } }
 
         public abstract string Drive();
+
+        public override string ToString()
+        {
+            return string.Format("{0}-{1}-{2}", Id, Name, Color);
+        }
     }
 }

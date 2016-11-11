@@ -3,9 +3,10 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using NHibernateTest.Backend.DomainModel;
 using System.IO;
 
-namespace NHibernateTest.Persistence.Helper
+namespace NHibernateTest.Backend.Persistence.Helper
 {
     public class NHibernateHelper
     {
@@ -25,7 +26,6 @@ namespace NHibernateTest.Persistence.Helper
 
         private static void BuildSchema(Configuration config)
         {
-
             if (!File.Exists(DbFileName))
             {
                 new SchemaExport(config)

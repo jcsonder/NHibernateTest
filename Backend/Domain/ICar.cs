@@ -1,4 +1,4 @@
-﻿namespace NHibernateTest
+﻿namespace NHibernateTest.Backend.Domain
 {
     public interface ICar
     {

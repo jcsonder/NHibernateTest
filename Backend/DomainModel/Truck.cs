@@ -1,4 +1,4 @@
-﻿namespace NHibernateTest
+﻿namespace NHibernateTest.Backend.DomainModel
 {
     public class Truck : Car
     {
