@@ -61,11 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainModel\Car.cs" />
+    <Compile Include="DomainModel\Owner.cs" />
     <Compile Include="DomainModel\SportCar.cs" />
     <Compile Include="DomainModel\Truck.cs" />
-    <Compile Include="Domain\ICar.cs" />
     <Compile Include="Persistence\CarMap.cs" />
     <Compile Include="Persistence\Helper\NHibernateHelper.cs" />
+    <Compile Include="Persistence\OwnerMap.cs" />
     <Compile Include="Persistence\SportCarMap.cs" />
     <Compile Include="Persistence\TruckMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

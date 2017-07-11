@@ -15,6 +15,11 @@ namespace NHibernateTest.Backend.Persistence
             Map(x => x.Name).Length(100).Nullable();
             Map(x => x.Model).Length(100).Nullable();
             Map(x => x.Color).Length(20).Nullable();
+
+            HasMany(x => x.Owners)
+                .Inverse()
+                .KeyColumns.Add("CarId", mapping => mapping.Name("CarId"))
+                .Cascade.All();
         }
     }
 }

@@ -1,37 +1,26 @@
 ﻿using FluentNHibernate.Data;
-using NHibernateTest.Backend.Domain;
+using NHibernate.Util;
+using System.Collections.Generic;
 
 namespace NHibernateTest.Backend.DomainModel
 {
-    public abstract class Car : Entity, ICar
+    public abstract class Car : Entity
     {
-        private string _name;
-        private string _model;
-        private string _color;
-
-        /// <summary>
-        /// Empty constructor for NHibernate
-        /// </summary>
         public Car()
         {
+            Owners = new List<Owner>();
         }
 
-        public Car(string name, string model, string color)
-        {
-            _name = name;
-            _model = model;
-            _color = color;
-        }
-
-        public virtual string Name { get { return _name; } }
-        public virtual string Model { get { return _model; } }
-        public virtual string Color { get { return _color; } }
+        public virtual string Name { get; set; }
+        public virtual string Model { get; set; }
+        public virtual string Color { get; set; }
+        public virtual IList<Owner> Owners { get; set; }
 
         public abstract string Drive();
 
         public override string ToString()
         {
-            return string.Format("{0}-{1}-{2}", Id, Name, Color);
+            return string.Format("{0}-{1}-{2}-{3}", Id, Name, Color, Owners.Any() ? Owners.First() : "none" );
         }
     }
 }

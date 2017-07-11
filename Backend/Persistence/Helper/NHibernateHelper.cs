@@ -3,7 +3,6 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
-using NHibernateTest.Backend.DomainModel;
 using System.IO;
 
 namespace NHibernateTest.Backend.Persistence.Helper
@@ -19,7 +18,9 @@ namespace NHibernateTest.Backend.Persistence.Helper
                 SQLiteConfiguration.Standard
                   .UsingFile(DbFileName)
               )
-              .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Car>())
+              //.Mappings(m => m.FluentMappings.Add<Car>())
+              //.Mappings(m => m.FluentMappings.Add<Owner>())
+              .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CarMap>())
               .ExposeConfiguration(BuildSchema)
               .BuildSessionFactory();
         }

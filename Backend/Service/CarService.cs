@@ -27,6 +27,7 @@ namespace NHibernateTest.Backend.Service
             using (ITransaction transaction = session.BeginTransaction())
             {
                 Car car = session.Get<Car>(id);
+                NHibernateUtil.Initialize(car.Owners);
                 transaction.Commit();
 
                 return car;
@@ -40,7 +41,9 @@ namespace NHibernateTest.Backend.Service
             using (ISession session = sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
-                IList<Car> cars = session.QueryOver<Car>().List();
+                IList<Car> cars = session.QueryOver<Car>()
+                    .JoinQueryOver<Owner>(p => p.Owners)
+                    .List();
                 transaction.Commit();
 
                 return cars;

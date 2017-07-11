@@ -13,16 +13,21 @@ namespace NHibernateTest
         {
             ICarService carService = new CarService();
 
+            // Create data
             Console.WriteLine("--- Save car 1");
-            Car car = new SportCar("Porsche", "356", "silver");
-            Console.WriteLine(car.Drive());
-            carService.SaveCar(car);
+            Car sportCar = new SportCar { Name = "Porsche", Model = "356", Color = "silver" };
+            sportCar.Owners.Add(new Owner { Name = "Mickey Mouse", Year = 2000, Car = sportCar });
+            sportCar.Owners.Add(new Owner { Name = "Roger Rabbit", Year = 2005, Car = sportCar });
+            carService.SaveCar(sportCar);
+            // Console.WriteLine(sportCar.Drive());
 
             Console.WriteLine("--- Save car 2");
-            Car truck = new Truck("Ford", "F-350", "blue");
-            Console.WriteLine(truck.Drive());
+            Car truck = new Truck { Name = "Ford", Model = "F-350", Color = "blue" };
+            truck.Owners.Add(new Owner { Name = "Norbert Ullmann", Year = 2015, Car = truck });
+            // Console.WriteLine(truck.Drive());
             carService.SaveCar(truck);
 
+            // load data
             Console.WriteLine("--- load single Car by Id");
             Car loadedTruck = carService.LoadCar(truck.Id);
             Console.WriteLine(loadedTruck.ToString());
