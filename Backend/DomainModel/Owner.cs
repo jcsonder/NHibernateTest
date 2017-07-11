@@ -13,7 +13,7 @@ namespace NHibernateTest.Backend.DomainModel
 
         public override string ToString()
         {
-            return string.Format("{0}-{1}-{2}", Id, Name, Year);
+            return string.Format("Id={0}, Name={1}, Year={2}", Id, Name, Year);
         }
     }
 }

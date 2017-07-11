@@ -18,8 +18,6 @@ namespace NHibernateTest.Backend.Persistence.Helper
                 SQLiteConfiguration.Standard
                   .UsingFile(DbFileName)
               )
-              //.Mappings(m => m.FluentMappings.Add<Car>())
-              //.Mappings(m => m.FluentMappings.Add<Owner>())
               .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CarMap>())
               .ExposeConfiguration(BuildSchema)
               .BuildSessionFactory();

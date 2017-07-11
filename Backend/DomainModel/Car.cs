@@ -20,7 +20,7 @@ namespace NHibernateTest.Backend.DomainModel
 
         public override string ToString()
         {
-            return string.Format("{0}-{1}-{2}-{3}", Id, Name, Color, Owners.Any() ? Owners.First() : "none" );
+            return string.Format("Id={0}, Name={1}, Color={2}, Owners:{3}", Id, Name, Color, string.Join("/", Owners) );
         }
     }
 }

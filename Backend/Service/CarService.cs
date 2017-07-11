@@ -1,7 +1,9 @@
 ﻿using NHibernate;
+using NHibernate.Linq;
 using NHibernateTest.Backend.DomainModel;
 using NHibernateTest.Backend.Persistence.Helper;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NHibernateTest.Backend.Service
 {
@@ -26,8 +28,13 @@ namespace NHibernateTest.Backend.Service
             using (ISession session = sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
-                Car car = session.Get<Car>(id);
-                NHibernateUtil.Initialize(car.Owners);
+                Car car = session.Query<Car>()
+                    .Fetch(x => x.Owners)
+                    .ToList()
+                    .First();
+                //// or:
+                ////Car car = session.Get<Car>(id);
+                //// NHibernateUtil.Initialize(car.Owners);
                 transaction.Commit();
 
                 return car;
@@ -41,9 +48,9 @@ namespace NHibernateTest.Backend.Service
             using (ISession session = sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
-                IList<Car> cars = session.QueryOver<Car>()
-                    .JoinQueryOver<Owner>(p => p.Owners)
-                    .List();
+                IList<Car> cars = session.Query<Car>()
+                    .Fetch(x => x.Owners)
+                    .ToList();
                 transaction.Commit();
 
                 return cars;
