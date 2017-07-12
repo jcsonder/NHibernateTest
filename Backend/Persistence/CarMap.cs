@@ -17,9 +17,12 @@ namespace NHibernateTest.Backend.Persistence
             Map(x => x.Color).Length(20).Nullable();
 
             HasMany(x => x.Owners)
-                .Inverse()
-                .KeyColumns.Add("CarId", mapping => mapping.Name("CarId"))
-                .Cascade.All();
+            ////    .KeyColumns.Add("CarId")  // define the FK name manually
+                .Cascade.AllDeleteOrphan();
+
+            ////HasMany(x => x.Owners)
+            ////    .Inverse()
+            ////    .Cascade.All();
         }
     }
 }

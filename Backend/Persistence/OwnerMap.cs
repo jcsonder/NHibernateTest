@@ -13,8 +13,8 @@ namespace NHibernateTest.Backend.Persistence
             Map(x => x.Name).Length(100).Nullable();
             Map(x => x.Year).Nullable();
 
-            References(x => x.Car)
-                .Columns("CarId");
+            References(x => x.Car);
+                ////.Columns("CarId");  // Define the FK name manually
         }
     }
 }
