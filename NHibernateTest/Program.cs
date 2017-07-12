@@ -15,7 +15,11 @@ namespace NHibernateTest
             Console.WriteLine("### CREATE NEW DATA");
             Console.WriteLine("--- Save sportCar");
             Car sportCar = new SportCar { Name = "Porsche", Model = "356", Color = "silver" };
-            sportCar.Owners.Add(new Owner { Name = "Mickey Mouse", Year = 2000, Car = sportCar });
+
+            Owner owner1 = new Owner { Name = "Mickey Mouse", Year = 2000, Car = sportCar };
+            owner1.Parameters.Add(new Parameter { Name = "param1" });
+
+            sportCar.Owners.Add(owner1);
             sportCar.Owners.Add(new Owner { Name = "Roger Rabbit", Year = 2005, Car = sportCar });
             carService.SaveCar(sportCar);
 

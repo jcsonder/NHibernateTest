@@ -53,6 +53,8 @@
     <Compile Include="DomainModel\Owner.cs" />
     <Compile Include="DomainModel\SportCar.cs" />
     <Compile Include="DomainModel\Truck.cs" />
+    <Compile Include="DomainModel\Paramter.cs" />
+    <Compile Include="Persistence\ParameterMap.cs" />
     <Compile Include="Persistence\CarMap.cs" />
     <Compile Include="Persistence\Helper\NHibernateHelper.cs" />
     <Compile Include="Persistence\OwnerMap.cs" />

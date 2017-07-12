@@ -1,5 +1,4 @@
 ﻿using FluentNHibernate.Data;
-using NHibernate.Util;
 using System.Collections.Generic;
 
 namespace NHibernateTest.Backend.DomainModel

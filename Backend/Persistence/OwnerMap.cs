@@ -14,7 +14,14 @@ namespace NHibernateTest.Backend.Persistence
             Map(x => x.Year).Nullable();
 
             References(x => x.Car);
-                ////.Columns("CarId");  // Define the FK name manually
+            ////.Columns("CarId");  // Define the FK name manually
+
+            HasManyToMany(x => x.Parameters)
+                .Not.LazyLoad()
+                .ParentKeyColumn("OwnerParameter_Id")
+                .ChildKeyColumn("Parameter_Id")
+                .Cascade.AllDeleteOrphan()
+                .Fetch.Join();
         }
     }
 }
