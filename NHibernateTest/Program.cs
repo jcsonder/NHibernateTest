@@ -40,6 +40,19 @@ namespace NHibernateTest
                 ////Console.WriteLine(loadedCar.Drive());
             }
 
+            Console.WriteLine();
+            Console.WriteLine("press any key to delete sport car: the two owners should be removed too!");
+            Console.ReadLine();
+            carService.DeleteCar(sportCar.Id);
+
+
+            Console.WriteLine();
+            Console.WriteLine("press any key to end");
+            Console.ReadLine();
+        }   
+
+        private void TplTests()
+        {
             ////Console.WriteLine("--- load Cars in background thread. threadId = {0}", Thread.CurrentThread.ManagedThreadId);
             ////IList<Car> carsLoadedInWorkerThread = null;
             ////Task x = Task.Run(() =>
@@ -58,10 +71,6 @@ namespace NHibernateTest
             ////});
 
             ////Console.WriteLine("finish. thread {0}", carsLoadedInWorkerThread.Count);
-
-            Console.WriteLine();
-            Console.WriteLine("press any key to end");
-            Console.ReadLine();
-        }   
+        }
     }
 }

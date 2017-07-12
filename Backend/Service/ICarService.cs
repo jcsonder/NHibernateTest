@@ -10,5 +10,7 @@ namespace NHibernateTest.Backend.Service
         Car LoadCar(long id);
         
         void SaveCar(Car car);
+
+        void DeleteCar(long id);
     }
 }

@@ -21,6 +21,19 @@ namespace NHibernateTest.Backend.Service
             }
         }
 
+        public void DeleteCar(long id)
+        {
+            ISessionFactory sessionFactory = NHibernateHelper.CreateSessionFactory();
+
+            using (ISession session = sessionFactory.OpenSession())
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                Car car = session.Get<Car>(id);
+                session.Delete(car);
+                transaction.Commit();
+            }
+        }
+
         public Car LoadCar(long id)
         {
             ISessionFactory sessionFactory = NHibernateHelper.CreateSessionFactory();
@@ -32,9 +45,6 @@ namespace NHibernateTest.Backend.Service
                     .Fetch(x => x.Owners)
                     .ToList()
                     .First();
-                //// or:
-                ////Car car = session.Get<Car>(id);
-                //// NHibernateUtil.Initialize(car.Owners);
                 transaction.Commit();
 
                 return car;
