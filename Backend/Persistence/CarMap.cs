@@ -19,10 +19,6 @@ namespace NHibernateTest.Backend.Persistence
             HasMany(x => x.Owners)
             ////    .KeyColumns.Add("CarId")  // define the FK name manually
                 .Cascade.AllDeleteOrphan();
-
-            ////HasMany(x => x.Owners)
-            ////    .Inverse()
-            ////    .Cascade.All();
         }
     }
 }
