@@ -7,8 +7,8 @@
     <ProjectGuid>{26D8F2FA-50D4-4866-85C7-EC39BE77E2FB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Backend</RootNamespace>
-    <AssemblyName>Backend</AssemblyName>
+    <RootNamespace>NHibernateTest.Backend</RootNamespace>
+    <AssemblyName>NHibernateTest.Backend</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

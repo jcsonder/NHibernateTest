@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
 using NHibernateTest.Backend.DomainModel;
 
-namespace Backend.Persistence
+namespace NHibernateTest.Backend.Persistence
 {
     public class ParameterMap : ClassMap<Parameter>
     {

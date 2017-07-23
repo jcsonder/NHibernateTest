@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateTest", "NHibernateTest\NHibernateTest.csproj", "{994C52D1-314B-4CBF-A083-04ECD6A2903F}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApplication", "NHibernateTest\ConsoleTestApplication.csproj", "{994C52D1-314B-4CBF-A083-04ECD6A2903F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "Backend\Backend.csproj", "{26D8F2FA-50D4-4866-85C7-EC39BE77E2FB}"
 EndProject
